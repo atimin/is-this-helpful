@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from docsite.views import DocsiteView
+
 
 from django_registration.backends.one_step.views import RegistrationView
 
@@ -27,6 +27,5 @@ urlpatterns = [
         name='django_registration_register'),
 
     url(r'^accounts/', include('django.contrib.auth.urls')),
-
-    path('', DocsiteView.as_view(), name='index')
+    path('', include('docsite.urls'))
 ]

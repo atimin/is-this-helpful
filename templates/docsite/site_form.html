@@ -1,0 +1,12 @@
+{% extends 'docsite/docsite_layout.html' %}
+{% load bulma_tags %}
+
+{% block workspace %}
+    <div class="content">
+        <form id="create-site-form" action="{% url 'create_site' %}" method="post">
+            {% csrf_token %}
+            {{ form  | bulma }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock workspace %}
