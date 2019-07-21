@@ -1,0 +1,12 @@
+Django >= 2.1
+django-bulma >= 0.5
+gunicorn>=19.9
+dj-database-url>=0.5
+psycopg2-binary>=2.7
+django-heroku>=0.3
+celery>=4.2
+redis>=2.10
+PyYAML>=3.13
+pylint
+pylint-django
+django-registration >= 3.0

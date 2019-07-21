@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %}
+{% load i18n %}
+{% load bulma_tags %}
+
+{% block content_title %}
+    {% trans 'Log in to your account' %}
+{% endblock content_title %}
+
+{% block content %}
+    <div class="content">
+        <form method="post">
+              {% csrf_token %}
+              {{ form|bulma }}
+              <button type="submit">{% trans 'Login' %}</button>
+        </form>
+        <h3>{% trans 'New to IsThisHelpful?' %} <a href="{% url 'django_registration_register' %}">SignUp</a> </h3>
+    </div>
+    <a href="{% url 'password_reset' %}">{% trans 'Forgot your password?' %}</a>
+{% endblock content %}

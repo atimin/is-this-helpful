@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+{% load i18n %}
+{% load bulma_tags %}
+
+{% block content_title %}
+    {% trans 'Sign up' %}
+{% endblock content_title %}
+
+{% block content %}
+
+    <div class="content">
+        <form action="{% url 'django_registration_register' %}" method="post">
+            {% csrf_token %}
+            {{ form  | bulma }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock content %}
