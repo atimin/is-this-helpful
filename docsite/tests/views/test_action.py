@@ -19,10 +19,6 @@ class TestAction(TestCase):
                                    content_type='application/json')
         self.assertTrue(404, request.status_code)
 
-    def test_wrong_content_type(self):
-        request = self.client.post('/sites/www.site.org/action/new')
-        self.assertTrue(415, request.status_code)
-
     def test_wrong_method(self):
         request = self.client.get('/sites/www.site.org/action/new')
         self.assertTrue(405, request.status_code)

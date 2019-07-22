@@ -1,7 +1,10 @@
 import json
+import logging
 from schema import Schema, And, Use, Optional
-from docsite.models import Site, Action
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from docsite.models import Site, Action
+
 
 ACTION_PAYLOAD_SCHEMA = Schema(
     {
@@ -11,13 +14,13 @@ ACTION_PAYLOAD_SCHEMA = Schema(
     }
 )
 
+LOGGER = logging.getLogger(__file__)
 
+
+@csrf_exempt
 def post_action(request, domain_name):
     if request.method != 'POST':
         return HttpResponse(status=405)
-
-    if request.content_type != 'application/json':
-        return HttpResponse(status=415)
 
     payload = json.loads(request.body)
     if not ACTION_PAYLOAD_SCHEMA.is_valid(payload):
