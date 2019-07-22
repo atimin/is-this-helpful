@@ -1,0 +1,18 @@
+
+- model: auth.user
+  pk: 1
+  fields:
+    password: "pbkdf2_sha256$120000$AJIOdYG8sm9J$P7sg9yFoUoaxzPZODzPFYpk6g1+Uc1QC/8eEslBPxD8="
+    username: user1
+
+- model: docsite.site
+  pk: 1
+  fields:
+    owner_id: 1
+    domain_name: www.site.org
+
+- model: docsite.document
+  pk: 1
+  fields:
+    site_id: 1
+    path: /doc/help1.html

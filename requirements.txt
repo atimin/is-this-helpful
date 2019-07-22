@@ -9,4 +9,5 @@ redis>=2.10
 PyYAML>=3.13
 pylint
 pylint-django
-django-registration >= 3.0
+django-registration >= 3
+schema
