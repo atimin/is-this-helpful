@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 {% for site in sites %}
-                    <a class="panel-block is-active">
+                    <a class="panel-block is-active" href="{% url 'view_site' site.domain_name %}">
                         <span class="panel-icon">
                             <i class="fas fa-book" aria-hidden="true"></i>
                         </span>

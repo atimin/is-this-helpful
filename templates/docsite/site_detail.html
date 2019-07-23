@@ -1,0 +1,55 @@
+{% extends 'docsite/docsite_layout.html' %}
+{% load i18n %}
+{% load bulma_tags %}
+
+
+{% block workspace %}
+    <h4 class="title">{% trans 'Statistics for last 14 days' %}</h4>
+
+    <table class="table is-fullwidth">
+        <thead>
+            <tr>
+                <th>
+                    {% trans 'Document' %}
+                </th>
+                <th>
+                    {% trans 'Viewed' %}
+                </th>
+                <th>
+                    {% trans 'Helpful' %}
+                </th>
+                <th>
+                    {% trans 'Not Helpful' %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doc in docs %}
+                <tr>
+                    <td rowspan="{{ doc.doc_raw_size }}">{{ doc.path }}</td>
+                    <td>{{ doc.viewed_count }}</td>
+                    <td>{{ doc.helpful_count }}</td>
+                    <td>{{ doc.not_helpful_count }}</td>
+                </tr>
+
+                {% for comment in doc.comments %}
+                    <tr>
+                        <td colspan="4">
+                            {{ comment }}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+            {%  endfor %}
+        </tbody>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
+    </table>
+{% endblock workspace %}
