@@ -7,10 +7,14 @@ function ituWidget() {
           path:  path,
           action: actionName,
           data: data
-      }
+      };
+
+
+      let url = protocol + '://{{ hostname }}/sites/' + domainName + '/action/new';
+      console.log("Send request to " + url);
 
       $.ajax({
-          url: protocol + '://{{ hostname }}/sites/' + domainName + '/action/new',
+          url: url,
           method: 'POST',
           dataType: 'json',
           data: JSON.stringify(payload),
