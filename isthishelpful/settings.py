@@ -30,7 +30,8 @@ DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
-    '127.0.0.1'
+    '127.0.0.1',
+    'is-this-helpful.herokuapp.com'
 ]
 
 
