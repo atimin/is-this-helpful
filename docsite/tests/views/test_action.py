@@ -84,4 +84,4 @@ class TestAction(TestCase):
 
         doc: Document = Document.objects.filter(pk=1).first()
         self.assertEqual(1, doc.action_set.count())
-        self.assertEqual('VIEW', doc.action_set.first())
+        self.assertEqual('VIEW', doc.action_set.first().action)
