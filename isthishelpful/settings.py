@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'bvxrl7&=wu%#5-0=+!w%q^ga-!zhnu-90knu(
 DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = [
-    'is-this-helpful.herokuapp.com'
+    '*'
 ]
 
 
