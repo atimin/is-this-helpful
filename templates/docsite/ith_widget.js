@@ -10,7 +10,7 @@ function ituWidget() {
       };
 
 
-      let url = protocol + '://{{ hostname }}/sites/' + domainName + '/action/new';
+      let url = protocol + '//{{ hostname }}/sites/' + domainName + '/action/new';
       console.log("Send request to " + url);
 
       $.ajax({
