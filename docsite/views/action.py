@@ -1,3 +1,19 @@
+"""
+   Copyright 2019 Aleksey Timin
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+"""
+
 import json
 import logging
 from schema import Schema, And, Use, Optional
@@ -19,6 +35,7 @@ LOGGER = logging.getLogger(__file__)
 
 @csrf_exempt
 def post_action(request, domain_name):
+    """Process posted JSON payload from the widget script"""
     if request.method == 'POST':
 
         payload = json.loads(request.body)
@@ -33,9 +50,10 @@ def post_action(request, domain_name):
             action.data = payload['data'] if 'data' in payload else None
             action.save()
             return HttpResponse()
-        else:
-            return HttpResponse(status=404)
-    elif request.method == 'OPTIONS':
+
+        return HttpResponse(status=404)
+
+    if request.method == 'OPTIONS':
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
@@ -43,4 +61,3 @@ def post_action(request, domain_name):
         return response
 
     return HttpResponse(status=405)
-
