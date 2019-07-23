@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 VERSION = '0.1.0'
 
@@ -134,3 +135,4 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 LOGOUT_REDIRECT_URL = '/'
 
 FIXTURE_DIRS = ('docsite/tests/fixtures/')
+django_heroku.settings(locals())
