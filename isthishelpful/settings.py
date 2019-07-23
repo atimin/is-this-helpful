@@ -88,9 +88,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
-# Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -100,6 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
+
+
+# Password validation
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
@@ -146,7 +146,6 @@ DEFAULT_FROM_EMAIL = 'noreply@is-this-helpful.herokuapp.com'
 
 LOGOUT_REDIRECT_URL = '/'
 
-FIXTURE_DIRS = ('docsite/tests/fixtures/')
 django_heroku.settings(locals())
 
 LOGGING = {
