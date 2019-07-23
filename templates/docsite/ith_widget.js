@@ -24,7 +24,9 @@ function ituWidget() {
     $('#is-helpful').click(function (event) {
         event.preventDefault();
         sendAction('HELPFUL');
-        $('#itu-widget').empty().append('<p>Thank you for the feedback. We’re really glad we could help!</p>')
+        $('#itu-widget').empty()
+            .append('<p>Thank you for the feedback. We’re really glad we could help!</p>')
+            .append('<p>Powered by <a href="http://{{ hostname }}">IsThisHelpful</a> service.</p>')
     });
 
     $('#is-not-helpful').click(function (event) {
@@ -39,6 +41,7 @@ function ituWidget() {
             sendAction('NOT_HELPFUL', $('#not-helpful-comment').val());
             $('#itu-widget').empty()
                 .append('<p>Thank you for the feedback. Your comments will help us improve our documents in the future.</p>')
+                .append('<p>Powered by <a href="http://{{ hostname }}">IsThisHelpful</a> service.</p>')
 
         })
     });
