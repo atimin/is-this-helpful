@@ -1,6 +1,9 @@
 Is This Helpful?
 ================
 
+.. image:: https://travis-ci.org/flipback/is-this-helpful.svg?branch=master
+    :target: https://travis-ci.org/flipback/is-this-helpful
+
 Is This Helpful (ITH) is a simple web service to get feedback about your online documentation.
 
 Usage
