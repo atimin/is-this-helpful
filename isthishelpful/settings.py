@@ -142,6 +142,8 @@ EMAIL_HOST_USER = os.environ.get('MAILGUN_SMTP_LOGIN')
 EMAIL_HOST_PASSWORD = os.environ.get('MAILGUN_SMTP_PASSWORD')
 EMAIL_USE_TLS = True
 
+DEFAULT_FROM_EMAIL = 'noreply@is-this-helpful.herokuapp.com'
+
 LOGOUT_REDIRECT_URL = '/'
 
 FIXTURE_DIRS = ('docsite/tests/fixtures/')
