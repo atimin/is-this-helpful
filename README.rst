@@ -6,7 +6,7 @@ Is This Helpful (ITH) is a simple web service to get feedback about your online 
 Usage
 -----
 
-Register the domain name of your documentation site on `ThisIsUseful <is-this-helpful.herokuapp.com>`_ and add the following code to your HTML template:
+Register the domain name of your documentation site on `ThisIsUseful <https://is-this-helpful.herokuapp.com>`_ and add the following code to your HTML template:
 
 ::
 
