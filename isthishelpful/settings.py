@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
 
 VERSION = '0.1.0'
 
@@ -146,7 +145,9 @@ DEFAULT_FROM_EMAIL = 'noreply@is-this-helpful.herokuapp.com'
 
 LOGOUT_REDIRECT_URL = '/'
 
-django_heroku.settings(locals())
+if 'HEROKU' in os.environ:
+    import django_heroku
+    django_heroku.settings(locals())
 
 LOGGING = {
     'version': 1,
