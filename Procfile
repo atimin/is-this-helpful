@@ -1,2 +1,2 @@
-web: gunicorn polyreader.wsgi --log-file -
+web: gunicorn isthishelpful.wsgi --log-file -
 release: python manage.py migrate
