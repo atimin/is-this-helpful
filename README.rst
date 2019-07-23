@@ -1,7 +1,7 @@
 Is This Helpful?
 ================
 
-Is This Helpful (ITH) is a simple web service to get feedback about you online documentation. 
+Is This Helpful (ITH) is a simple web service to get feedback about your online documentation.
 
 Usage
 -----
