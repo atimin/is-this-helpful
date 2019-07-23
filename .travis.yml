@@ -5,5 +5,6 @@ python:
 install:
   - pip install -r requirements.txt
 script:
+  - find docsite -iname '*.py' | xargs pylint --load-plugins pylint_django --ignored-classes=User
   - python manage.py migrate
   - python manage.py test
