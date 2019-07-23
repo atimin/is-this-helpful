@@ -2,6 +2,7 @@ function ituWidget() {
     function sendAction(actionName, data="") {
       let domainName = window.location.hostname;
       let path = window.location.pathname;
+      let protocol = window.location.protocol;
       let payload = {
           path:  path,
           action: actionName,
@@ -9,7 +10,7 @@ function ituWidget() {
       }
 
       $.ajax({
-          url: 'http://{{ hostname }}/sites/' + domainName + '/action/new',
+          url: protocol + '://{{ hostname }}/sites/' + domainName + '/action/new',
           method: 'POST',
           dataType: 'json',
           data: JSON.stringify(payload),
