@@ -39,6 +39,7 @@ def post_action(request, domain_name):
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        response['Access-Control-Allow-Headers'] = 'origin, x-csrftoken, content-type, accept'
         return response
 
     return HttpResponse(status=405)
