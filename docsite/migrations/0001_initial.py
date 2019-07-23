@@ -3,7 +3,19 @@
 
 from django.conf import settings
 from django.db import migrations, models
+from django.contrib.auth.models import User
 import django.db.models.deletion
+
+
+def create_superuser(apps, schema_editor):
+    superuser = User()
+    superuser.is_active = True
+    superuser.is_superuser = True
+    superuser.is_staff = True
+    superuser.username = 'admin'
+    superuser.email = 'admin@admin.net'
+    superuser.set_password('admin')
+    superuser.save()
 
 
 class Migration(migrations.Migration):
@@ -15,6 +27,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RunPython(create_superuser),
         migrations.CreateModel(
             name='Site',
             fields=[
